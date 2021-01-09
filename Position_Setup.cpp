@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // Position_Setup.cpp
-// 
+//
 // Root position setup functions including FEN string parsing
 //
 // ChessPuter
@@ -400,13 +400,3 @@ void Position::playMoves(std::string input) {
         playMoves(input.substr(5, input.length() - 5));
     }
 }
-
-
-
-
-
-
-
-
-
-

@@ -37,7 +37,7 @@ void Engine::runReceiveCommands() {
         // Put extra space at the end of the string for substr() and at()
         input = input + "                       ";
         if (input.substr(0, 3) == "uci" && input.find("newgame") == -1) {
-            std::cout << "id name ChessPuter\nid author Miles Bright\n";
+            std::cout << "id name ChessPuter (Feb18, UT fix)\nid author Miles Bright\n";
             // list changeable options here
             std::cout << "uciok\n";
             continue;
@@ -112,6 +112,8 @@ void Engine::positionCommand(std::string input) {
         if (input.substr(0, 3) == "fen")
             rootPosition.setupFEN(input.substr(4, input.length() - 4));
     //}
+
+    firstMove = false;
 }
 
 
@@ -203,5 +205,3 @@ void Engine::sendBestMove() {
     lastSquare[1] = bestContinuation->lastMove[3];
     rootPosition.nextPositions.clear();
 }
-
-
